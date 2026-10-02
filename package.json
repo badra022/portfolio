@@ -1,0 +1,32 @@
+{
+  "name": "ahmed-badra-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Ahmed Badra, Senior SDET & QA automation consultant",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node scripts/serve.mjs",
+    "lint": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "og": "node scripts/og.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/schibsted-grotesk": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "postcss": "8.5.28",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "@fontsource-variable/schibsted-grotesk";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+@theme {
+  --color-paper: #f2f4f1;
+  --color-paper-2: #e8ebe6;
+  --color-ink: #142033;
+  --color-ink-2: #1d2c44;
+  --color-slate: #556173;
+  --color-line: #d3d8d0;
+  --color-pass: #1e7a52;
+  --color-pass-soft: #d9ece2;
+  --color-fail: #b8432e;
+  --color-run-text: #d9e1ea;
+  --color-run-dim: #8794a8;
+  --color-run-pass: #6fd3a0;
+
+  --font-sans: "Schibsted Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-pass-soft);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-pass);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hero test run: each line appears in sequence, then its check turns green. */
+@keyframes run-line {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes run-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.run-line {
+  opacity: 0;
+  animation: run-line 0.35s ease-out forwards;
+}
+.run-mark-pending {
+  animation:
+    run-spin 0.8s linear infinite,
+    run-hide 0.15s ease-out var(--done, 0s) forwards;
+}
+.run-mark-done {
+  opacity: 0;
+  animation: run-show 0.2s ease-out var(--done, 0s) forwards;
+}
+@keyframes run-hide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes run-show {
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .run-line,
+  .run-mark-done,
+  .run-mark-pending {
+    animation-delay: 0ms !important;
+  }
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-toggle {
+  transform: rotate(45deg);
+}
