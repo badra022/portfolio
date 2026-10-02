@@ -1,7 +1,13 @@
 import { expect, test } from "@playwright/test";
 import { SitePage } from "../pages/SitePage";
 
-const slugs = ["coverage-40-to-95", "selenium-to-playwright", "qa-dashboard", "api-regression-and-ai-qa"];
+const slugs = [
+  "coverage-40-to-95",
+  "selenium-to-playwright",
+  "test-data-observability-ai-reports",
+  "qa-dashboard",
+  "api-regression-and-ai-qa",
+];
 
 test.describe("Case study pages", () => {
   for (const slug of slugs) {

@@ -22,8 +22,10 @@ test.describe("Home page", () => {
 
   for (const [id, phrase] of [
     ["audit", "Release Confidence Audit"],
+    ["manual", "test planning and manual QA"],
     ["build", "test automation"],
-    ["partner", "ongoing QA support"],
+    ["ecosystem", "QA tooling and reporting"],
+    ["architecture", "test architecture"],
   ] as const) {
     test(`the ${id} offer opens WhatsApp with a message about that offer`, async () => {
       const cta = home.offer(id).locator('a[data-cta="whatsapp"]');
@@ -37,7 +39,7 @@ test.describe("Home page", () => {
   });
 
   test("lists all case studies and each one opens", async ({ page }) => {
-    await expect(home.caseStudyLinks).toHaveCount(4);
+    await expect(home.caseStudyLinks).toHaveCount(5);
     await home.caseStudyLinks.first().click();
     await expect(page).toHaveURL(/case-studies\/coverage-40-to-95\/$/);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("40% to 95%");
@@ -56,6 +58,19 @@ test.describe("Home page", () => {
     expect(og).toMatch(/\/portfolio\/og\.png$/);
     const res = await page.request.get(new URL(og!).pathname);
     expect(res.status()).toBe(200);
+  });
+
+  test("shows the QA system as six connected stages", async ({ page }) => {
+    await expect(page.locator("#system li")).toHaveCount(6);
+  });
+
+  test("photos load", async ({ page }) => {
+    const photos = page.locator('img[alt^="Ahmed Badra"]');
+    await expect(photos).toHaveCount(2);
+    for (const img of await photos.all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth)).toBeGreaterThan(0);
+    }
   });
 
   test("does not scroll sideways", async () => {

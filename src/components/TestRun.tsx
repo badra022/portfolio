@@ -1,4 +1,4 @@
-import { heroRun } from "@/content/site";
+import { heroRun, heroRunSummary } from "@/content/site";
 import { CheckIcon } from "./icons";
 
 const STEP = 0.75; // seconds between lines
@@ -46,7 +46,7 @@ export function TestRun() {
         </ol>
         <p className="run-line mt-5 border-t border-white/10 pt-4" style={{ animationDelay: `${end}s` }}>
           <span className="text-run-pass">{total} passed</span>
-          <span className="text-run-dim"> · safe to ship</span>
+          <span className="text-run-dim"> · {heroRunSummary}</span>
         </p>
       </div>
     </figure>

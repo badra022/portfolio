@@ -3,6 +3,7 @@ import Link from "next/link";
 import { caseStudies, hire, mailLink, messages, person } from "@/content/site";
 import { WhatsAppButton } from "@/components/Contact";
 import { CheckIcon, GitHubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
+import { Avatar } from "@/components/Photo";
 import { StickyBar } from "@/components/StickyBar";
 
 export const metadata: Metadata = {
@@ -16,8 +17,14 @@ export default function HirePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-16">
       <section className="max-w-3xl">
-        <p className="text-[1.0625rem] text-slate">For recruiters and engineering managers</p>
-        <h1 className="mt-4 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.03em] sm:text-[3.8rem]">{hire.headline}</h1>
+        <div className="flex items-center gap-4">
+          <Avatar size={88} className="ring-4" />
+          <div>
+            <p className="text-[1.125rem] font-bold">{person.name}</p>
+            <p className="text-[1.0625rem] text-slate">For recruiters and engineering managers</p>
+          </div>
+        </div>
+        <h1 className="mt-8 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.03em] sm:text-[3.8rem]">{hire.headline}</h1>
         <p className="mt-6 text-[1.2rem] leading-relaxed text-ink/80">{hire.sub}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -62,6 +69,7 @@ export default function HirePage() {
             </li>
           ))}
         </ul>
+        <p className="mt-8 inline-flex rounded-full bg-pass-soft px-4 py-2 text-[1rem] font-semibold text-ink">{hire.recentResult}</p>
       </section>
 
       <section className="mt-16 grid gap-10 border-t border-line pt-12 lg:grid-cols-[1fr_2fr]">

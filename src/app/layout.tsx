@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const description =
-  "Senior SDET and QA automation consultant. I build, fix and audit Playwright, API and CI test automation for startups and product teams, so bugs get caught before users find them.";
+  "Senior SDET and QA consultant. I build complete test automation and the QA systems around it: test data APIs, observability, test management and AI-assisted test planning and reporting, for startups, product teams and QA teams.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(person.siteUrl + "/"),
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     "API testing",
     "freelance QA engineer",
     "Selenium to Playwright migration",
+    "test architecture",
+    "test data API",
+    "QA reporting dashboard",
+    "AI test case generation",
+    "manual QA",
   ],
   authors: [{ name: person.name, url: person.siteUrl }],
   openGraph: {
