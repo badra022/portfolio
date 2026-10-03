@@ -41,15 +41,15 @@ test.describe("Home page", () => {
   test("lists all case studies and each one opens", async ({ page }) => {
     await expect(home.caseStudyLinks).toHaveCount(5);
     await home.caseStudyLinks.first().click();
-    await expect(page).toHaveURL(/case-studies\/coverage-40-to-95\/$/);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("40% to 95%");
+    await expect(page).toHaveURL(/case-studies\/full-automation-coverage\/$/);
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Full automation");
   });
 
   test("FAQ answers expand on click", async () => {
     const item = home.faq("Can you work with our stack?");
-    await expect(item.getByText("Playwright, Cypress")).toBeHidden();
+    await expect(item.getByText("Playwright, Selenium")).toBeHidden();
     await item.locator("summary").click();
-    await expect(item.getByText(/Playwright, Cypress/)).toBeVisible();
+    await expect(item.getByText(/Playwright, Selenium/)).toBeVisible();
   });
 
   test("has share metadata for LinkedIn and WhatsApp previews", async ({ page }) => {
