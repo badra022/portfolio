@@ -65,7 +65,7 @@ export const heroRun = [
 export const heroRunSummary = "report sent to stakeholders";
 
 export const proof = [
-  { value: "40% → 95%", label: "automation coverage I delivered across new and legacy services" },
+  { value: "100%", label: "of the planned test scope automated, across multiple projects" },
   { value: "Selenium → Playwright", label: "framework migration I led, end to end" },
   { value: "Full QA ecosystem", label: "framework, test data APIs, dashboard and AI reports" },
   { value: "ISTQB", label: "Certified Tester, Foundation Level" },
@@ -248,30 +248,31 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "coverage-40-to-95",
-    title: "Raising automation coverage from 40% to 95%",
-    result: "40% → 95% automation coverage",
+    slug: "full-automation-coverage",
+    title: "Full automation of the planned test scope, across multiple projects",
+    result: "100% of the planned scope automated",
     summary:
-      "Structured automation for both new and legacy services on a platform engineering team, plus higher requirements coverage across the board.",
+      "Took automation coverage to 100% of the planned test scope on multiple projects, by building a framework that makes new tests quick and easy to add.",
     stack: ["Playwright", "TypeScript", "Postman", "TestRail", "CI/CD"],
     role: "SDET, owned QA for the delivery team",
     before: [
       "A platform engineering team at a global industrial software company was shipping new services while older ones kept running in production.",
-      "Only about 40% of the team's tests were automated. The rest relied on manual checks, which slowed releases and left regressions to chance.",
+      "Coverage stalled because adding each new test cost too much effort. Test code, setup and assertions were tangled together, so people avoided writing more tests.",
     ],
     during: [
-      "I owned QA for the team end to end: test planning, test design and automation, inside an Agile delivery cycle.",
-      "I introduced a structured approach to automation for new services and worked back through the legacy ones, starting with the flows with the most risk.",
-      "I linked automated tests to requirements, so the team could see which requirements were covered and which were not.",
-      "Testing covered frontend, backend, data pipelines, cloud-native services and databases — from smoke tests to usability checks across environments.",
+      "I agreed the test scope with each team first, then automated all of it.",
+      "I built a clear, scalable page object structure, so every screen and flow has one obvious home.",
+      "I added shared utilities and an assertion library, so common checks are one-liners.",
+      "I standardized setup, data and cleanup, so a new test starts from a working base.",
+      "Testing covered frontend, backend, data pipelines, cloud-native services and databases, from smoke tests to usability checks across environments.",
     ],
     after: [
-      "Automated test coverage rose from 40% to 95%.",
-      "Requirements coverage went up across the team, and regressions were caught by the suite instead of by users.",
-      "Developers, product and DevOps had a shared view of quality to plan releases against.",
+      "100% automation coverage of the planned scope on multiple projects.",
+      "A new test now takes only the test logic, not the plumbing, so coverage stays complete as the product grows.",
+      "Regressions were caught by the suite instead of by users, and developers, product and DevOps had a shared view of quality to plan releases against.",
     ],
     forYou:
-      "If most of your testing is still manual, I start with the highest-risk flows. On a defined scope, I aim to automate 100% of your regression suite.",
+      "Coverage is only worth having if it stays cheap to maintain. The framework is what lets a team reach 100% of the agreed scope and keep it there.",
     offerId: "build",
   },
   {
@@ -411,11 +412,11 @@ export const promises = [
 export const faqs = [
   {
     q: "Why work with someone based in Cairo?",
-    a: "Cairo time overlaps fully with Gulf and European working hours, and with part of the US morning. I write clear, async-friendly updates, so work keeps moving between calls. And you get enterprise-level QA experience for a startup budget.",
+    a: "I've worked with US time zones for three years, so async-first collaboration is second nature. Cairo overlaps even more easily with Gulf and European hours. I write clear updates, so work keeps moving between calls. You get senior, enterprise-level QA experience at a startup-friendly cost.",
   },
   {
-    q: "Do you only write tests?",
-    a: "No. I also build the tools around them: test data APIs, scripts that help manual testers, logging and reporting pipelines, and dashboards. I write test plans and test cases, and do hands-on manual testing too.",
+    q: "Do you only write automated tests?",
+    a: "No. I cover QA end to end, from hands-on manual testing to owning full QA pipelines and workflows across teams. I also build the infrastructure and tooling that empowers QA teams: test data APIs, logging standards, reporting pipelines, and dashboards. Writing test plans and test cases is part of the job too.",
   },
   {
     q: "Can you really automate 100%?",
@@ -423,7 +424,7 @@ export const faqs = [
   },
   {
     q: "Can you work with our stack?",
-    a: "Most likely. I work with Playwright, Cypress, Selenium/Nightwatch and Appium for UI; Postman, Bruno and Supertest for APIs; Pytest, JUnit and TestNG for unit and service tests; and TypeScript, JavaScript, Python and Java. I set up tests in GitHub Actions and other CI, run them on grids like BrowserStack, and build backends and tools on AWS. If it runs in a browser or exposes an API, I can test it.",
+    a: "Most likely. I'm a developer first, so I'm tool-agnostic and pick up new stacks quickly. I work in Python, TypeScript, Java and C++. For UI and mobile I use Playwright, Selenium, Appium and WebdriverIO. I run suites in GitHub Actions, Bitbucket Pipelines and Jenkins. If it runs in a browser or exposes an API, I can test it.",
   },
   {
     q: "Our app was built by a freelancer and the code is messy. Can you still help?",
@@ -435,7 +436,7 @@ export const faqs = [
   },
   {
     q: "Do you use AI?",
-    a: "Yes. I use Claude Code, GitHub Copilot and agentic workflows to build faster. I also set up AI workflows for QA teams, such as agents that draft test plans, test cases and test reports. A person reviews and approves every step, so AI does the heavy lifting and your team keeps control.",
+    a: "Yes, heavily. I use Claude, Claude Code and GitHub Copilot to build faster. I also design agentic workflows that run QA processes and produce QA work products such as test plans, test cases and reports, and that support the wider development cycle. I set up AI-agent automations for daily work so it happens systematically, not by chance. A person reviews and approves every step, so your team stays in control.",
   },
   {
     q: "Are you open to full-time roles?",
@@ -447,7 +448,7 @@ export const about = {
   paragraphs: [
     "I'm a senior SDET with a background in Systems and Biomedical Engineering from Cairo University. Today I own quality for a platform engineering team at a global industrial software company, from test planning to automation.",
     "I also build software. Alongside test frameworks, I build the backends, APIs and dashboards QA teams rely on, deployed cloud-native on AWS. I use Claude Code, GitHub Copilot and agentic workflows to deliver faster.",
-    "Before QA, I taught C, C++ and data structures to university students. That's why I care about clear docs, and about teams that can run things without me. I believe a test suite is only useful if people trust it: green should mean safe to ship, and red should mean a real problem.",
+    "Before QA, I taught C, C++ and embedded systems to university students and working engineers, and built several embedded projects of my own. That hands-on engineering background gives me a strong instinct for how software actually works. I sit very close to engineering as a QA engineer, so I usually understand what I'm testing in depth and pick up new systems fast. My team has recognized this in my yearly reviews. I also care about clear docs and teams that can run things without me. A test suite is only useful if people trust it: green should mean safe to ship, and red should mean a real problem.",
   ],
 };
 
@@ -466,7 +467,7 @@ export const hire = {
     "I use AI to deliver faster: Claude Code, GitHub Copilot and agentic workflows",
     "I onboard and train teams so they can run what I build",
   ],
-  recentResult: "Recent result: automation coverage raised from 40% to 95% across new and legacy services.",
+  recentResult: "Recent result: 100% of the planned test scope automated across multiple projects.",
   experience: [
     {
       role: "Software Development Engineer in Test",
@@ -481,7 +482,7 @@ export const hire = {
         "Designed a Postman API regression setup synced with team tools and reports.",
         "Built and own the QA automation dashboard (React, AWS serverless).",
         "Test frontend, backend, data pipelines, cloud-native apps and databases.",
-        "Raised automated coverage from 40% to 95%.",
+        "Took automation coverage to 100% of the planned scope on multiple projects.",
       ],
     },
     {
@@ -490,7 +491,7 @@ export const hire = {
       place: "Remote",
       period: "2022 – 2024",
       points: [
-        "Taught C, C++, data structures, embedded systems and microprocessors to university students.",
+        "Taught C, C++, data structures, embedded systems and microprocessors to university students and working engineers.",
       ],
     },
     {
@@ -502,14 +503,14 @@ export const hire = {
     },
   ],
   skills: [
-    { group: "UI automation", items: ["Playwright", "Cypress", "Selenium", "Nightwatch.js", "Appium"] },
+    { group: "UI automation", items: ["Playwright", "Cypress", "Selenium", "WebdriverIO", "Nightwatch.js", "Appium"] },
     { group: "API testing", items: ["Postman", "Bruno", "Supertest", "REST APIs"] },
     { group: "Test design and manual QA", items: ["Test planning", "ISTQB test design techniques", "Exploratory testing", "Usability testing", "Bug reporting"] },
     { group: "Test frameworks", items: ["Pytest", "JUnit", "TestNG"] },
     { group: "Development", items: ["Node.js", "React", "REST API design", "AWS Lambda", "API Gateway", "DynamoDB", "S3"] },
     { group: "AI-assisted engineering", items: ["Claude Code", "GitHub Copilot", "Agentic workflows"] },
-    { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "SQL", "C/C++"] },
-    { group: "CI and cloud", items: ["CI/CD", "GitHub Actions", "AWS", "Linux & Bash", "BrowserStack", "AWS Device Farm"] },
+    { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "SQL", "C", "C++"] },
+    { group: "CI and cloud", items: ["CI/CD", "GitHub Actions", "Bitbucket Pipelines", "Jenkins", "AWS", "Linux & Bash", "BrowserStack", "AWS Device Farm"] },
     { group: "Process and tools", items: ["STLC", "Agile", "Jira & Confluence", "TestRail", "Git"] },
   ],
   education: "B.Sc. Systems and Biomedical Engineering, Cairo University, 2022 — Very Good with Honors",
